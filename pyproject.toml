@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flux-opcodes"
+version = "0.1.0"
+description = "Bytecode instruction set for agent runtimes — language-agnostic opcode spec"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{name = "Oracle1", email = "oracle1@cocapn.ai"}]
+keywords = ["opcodes", "bytecode", "isa", "flux", "vm", "cocapn"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/SuperInstance/flux-opcodes"

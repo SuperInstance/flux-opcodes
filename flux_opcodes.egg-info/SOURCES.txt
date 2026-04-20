@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+flux_opcodes/__init__.py
+flux_opcodes/opcodes.py
+flux_opcodes.egg-info/PKG-INFO
+flux_opcodes.egg-info/SOURCES.txt
+flux_opcodes.egg-info/dependency_links.txt
+flux_opcodes.egg-info/top_level.txt
+tests/test_flux_opcodes.py

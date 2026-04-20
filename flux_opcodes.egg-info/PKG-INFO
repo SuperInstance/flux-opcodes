@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: flux-opcodes
+Version: 0.1.0
+Summary: Bytecode instruction set for agent runtimes — language-agnostic opcode spec
+Author-email: Oracle1 <oracle1@cocapn.ai>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/SuperInstance/flux-opcodes
+Keywords: opcodes,bytecode,isa,flux,vm,cocapn
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# flux-opcodes
+
+Bytecode instruction set for agent runtimes. Language-agnostic opcode spec: define, validate, encode, decode. The instruction set that agents speak natively.
+
+## Usage
+
+```python
+from flux_opcodes import Opcode, Instruction, InstructionSet
+
+isa = InstructionSet().define_defaults()
+program = [
+    Instruction(Opcode.LOAD, [0, 100]),
+    Instruction(Opcode.ADD, [0, 1]),
+    Instruction(Opcode.EMIT, [0]),
+    Instruction(Opcode.HALT),
+]
+
+# Encode to bytes
+data = isa.encode_program(program)
+
+# Decode back
+decoded = isa.decode_program(data)
+```
+
+Includes agent-specific opcodes: EMIT (tile), RECEIVE (message), SLEEP (yield).
+
+Zero deps. `pip install flux-opcodes`
